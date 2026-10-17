@@ -1,0 +1,33 @@
+{
+  "name": "genpark-manus-autonomous-web-browser-dom-actuator-skill",
+  "version": "1.0.0",
+  "description": "Manus & Adept ACT-1-inspired Autonomous Web Browser DOM Actuator. Flattens DOM trees into accessibility trees (AXTree), prunes non-interactive noise, synthesizes robust CSS/XPath locators, and compiles goal-driven multi-step automation plans with verification checks.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "compile_dom_action_sequence",
+      "description": "Parse DOM element nodes and generate an execution plan for a web automation goal.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "goal": {
+            "type": "string",
+            "description": "User intent (e.g., 'Book flight CDG to JFK' or 'Checkout cart')."
+          },
+          "raw_dom_elements": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "DOM nodes with tag, id, text, role, is_visible, and attributes."
+          }
+        },
+        "required": [
+          "goal",
+          "raw_dom_elements"
+        ]
+      }
+    }
+  ]
+}
